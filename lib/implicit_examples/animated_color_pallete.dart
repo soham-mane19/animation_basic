@@ -13,6 +13,10 @@ class _AnimatedColorPaletteState extends State<AnimatedColorPalette> {
 
   static List<Color> generateRandomPalette() {
     final random = Random();
+
+  
+
+  
     return List.generate(
       5,
       (_) => Color.fromRGBO(
@@ -22,6 +26,8 @@ class _AnimatedColorPaletteState extends State<AnimatedColorPalette> {
         1,
       ),
     );
+
+  
   }
 
   void regeneratePalette() {
@@ -40,8 +46,10 @@ class _AnimatedColorPaletteState extends State<AnimatedColorPalette> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            /*when the property inside the container changed the animated property inside the conatiner changed*/
             for (Color color in currentPalette)
-              Container(
+              AnimatedContainer(
+                duration:  const Duration(milliseconds:500),
                 width: 100,
                 height: 100,
                 color: color,
